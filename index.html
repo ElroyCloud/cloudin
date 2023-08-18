@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stduio Elroy KR</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua:ital,wght@0,300;0,400;0,700;1,100&display=swap">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/icon.png">
+</head>
+<body>
+    <div class="nav-top">
+        ELROY Cloud
+        <div class="nav-img">
+            <a href="https://elroycloud.github.io/AWS-DOWNLOAD/" target="_blank"><img src="img/download.png" href="https://elroycloud.github.io/AWS-DOWNLOAD/"></a>
+        </div>
+    </div>
+    <div class="divider"></div>
+    <div class="container">
+        <div class="top">
+            <h1>Elroy Cloud</h1>
+            <h5>⚡ 엘로이 클라우드에 어서오세요! ⚡</t5>
+        </div>
+        <div class="command-section">
+            <ul>
+                <li class="closed" id="1" onclick="change_board(this)">서버 정보</li>
+            </ul>
+        </div>
+        <div class="command-list">
+            <table class="commands" id="board1">
+                <tr>
+                    <th>서버 주소</th>
+                    <th>클라이언트 버전</th>
+                    <th>상태</th>
+                </tr>
+                <tr>
+                    <td>Open Soon</td>
+                    <td>1.16.5</td>
+                    <td>🟡 점검중</td>
+                </tr>
+                <h1 style="text-align: center; color: #6867de;">📢알파 테스터 모집중</h1>
+            </table>
+        </div>
+    </div>
+    <div class="divider"></div>
+</body>
+<script>
+
+    document.getElementById('board1').style.display = 'block';
+    for (let i = 1; i <= 5; i++){
+        if (i != Number('1')){
+            console.log(document.getElementById('board' + String(i)));
+            document.getElementById('board' + String(i)).style.display = 'none';
+        }
+    }
+
+    document.getElementById('1').style.backgroundColor = '#6867de';
+    for (let i = 1; i <= 5; i++){
+        if (i != Number('1')){
+            document.getElementById(String(i)).style.backgroundColor = 'transparent';
+        }
+    }
+
+    function change_board(el){
+        btn_id = el.id;
+        board_id = 'board' + btn_id;
+
+        document.getElementById(board_id).style.display = 'block';
+        for (let i = 1; i <= 5; i++){
+            if (i != Number(btn_id)){
+                document.getElementById('board' + String(i)).style.display = 'none';
+            }
+        }
+
+        document.getElementById(btn_id).style.backgroundColor = '#6867de';
+        document.getElementById(btn_id).className = 'closed';
+        for (let i = 1; i <= 5; i++){
+            if (i != Number(btn_id)){
+                document.getElementById(String(i)).style.backgroundColor = 'transparent';
+                document.getElementById(String(i)).className = 'open';
+            }
+        }
+    }
+</script>
+</html>

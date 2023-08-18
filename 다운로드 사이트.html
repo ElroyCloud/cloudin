@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Download Server 1</title>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+<center>
+  <div id="app">
+    <img src="https://media.discordapp.net/attachments/887847623455834164/917530272872956028/02abf350090bd63b.png" alt="Vue logo">
+    <h1>\{{ greeting }}</h1>
+    <ul>
+      <li>
+호파4 다운로드를 위한 서버 입니다
+        </a>
+      </li>
+      <li>
+        혹시 도움이 필요하다면 스튜디오 K 디스코드
+        <a :href="discordURL" target="_blank">
+          the Discord chat
+        </a>
+      </li>
+      <li>
+        다운로드는 아래를 클릭하세요
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        greeting: 'Download Server 1',
+        docsURL: 'http://vuejs.org/guide/',
+        discordURL: 'https://discord.gg/9gRJ6x6tZ8',
+        forumURL: 'http://forum.vuejs.org/'
+      },
+      methods: {
+        humanizeURL: function (url) {
+          return url
+            .replace(/^https?:\/\//, '')
+            .replace(/\/$/, '')
+        }
+      }
+    })
+  </script>
+<a href="config.txt" download>다운로드 하려면 이 글자를 클릭하세요</a>
+<a href="serversettings.json" download>다운로드 하려면 이 글자를 클릭하세요</a>
+
+<!-- Channel Plugin Scripts -->
+<script>
+  (function() {
+    var w = window;
+    if (w.ChannelIO) {
+      return (window.console.error || window.console.log || function(){})('ChannelIO script included twice.');
+    }
+    var ch = function() {
+      ch.c(arguments);
+    };
+    ch.q = [];
+    ch.c = function(args) {
+      ch.q.push(args);
+    };
+    w.ChannelIO = ch;
+    function l() {
+      if (w.ChannelIOInitialized) {
+        return;
+      }
+      w.ChannelIOInitialized = true;
+      var s = document.createElement('script');
+      s.type = 'text/javascript';
+      s.async = true;
+      s.src = 'https://cdn.channel.io/plugin/ch-plugin-web.js';
+      s.charset = 'UTF-8';
+      var x = document.getElementsByTagName('script')[0];
+      x.parentNode.insertBefore(s, x);
+    }
+    if (document.readyState === 'complete') {
+      l();
+    } else if (window.attachEvent) {
+      window.attachEvent('onload', l);
+    } else {
+      window.addEventListener('DOMContentLoaded', l, false);
+      window.addEventListener('load', l, false);
+    }
+  })();
+  ChannelIO('boot', {
+    "pluginKey": "6ecce596-bd40-49a4-91df-b00cdc7c3d3f"
+  });
+</script>
+<!-- End Channel Plugin -->
+</center>
+</body>
+</html>
